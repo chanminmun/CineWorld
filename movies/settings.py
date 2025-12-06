@@ -166,8 +166,8 @@ LOGOUT_REDIRECT_URL = '/'      # 로그아웃 후 이동할 URL
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-TMDB_BEARER_TOKEN = os.getenv("TMDB_BEARER_TOKEN", "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZjViYWYwNWJkZjE1YTI3MmNkMWY3M2FiN2I3NTRhOCIsIm5iZiI6MTc1OTkyNTgwMi4zMjMsInN1YiI6IjY4ZTY1NjJhY2NlZTNjZGVlNjhhMDExOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.QTXQRslRCl4MgZvSLkDxbCMGDVP8CvRCvtHO5KMaw-4")
-KOBIS_API_KEY = "5df9cbf5452ef1d313d3f4b7a88e7625"
+TMDB_BEARER_TOKEN = os.getenv("TMDB_BEARER_TOKEN", "")
+KOBIS_API_KEY = ""
 
 #----------------S3---------------------------------------------------------
 
