@@ -5,6 +5,7 @@
   "cpu": "256",
   "memory": "512",
   "executionRoleArn": "arn:aws:iam::808243603066:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::808243603066:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "cineworld-container",
