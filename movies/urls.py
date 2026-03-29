@@ -34,6 +34,7 @@ urlpatterns = [
     path("comment/<int:comment_id>/delete/", views.comment_delete, name="comment_delete"),
     path("movies/<int:tmdb_id>/favorite/", views.favorite_toggle, name="favorite_toggle"),
     path("search/", views.search, name="search"),
+    path("health/", views.health_check),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

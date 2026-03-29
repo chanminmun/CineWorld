@@ -10,6 +10,7 @@ from .models import Comment
 from .models import Comment, Favorite
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg, Count
+from django.http import HttpResponse
 # -----------------------------
 # 공통 상수/헬퍼
 # -----------------------------
@@ -973,3 +974,5 @@ def search(request):
         "sort": sort,
     })
 
+def health_check(request):
+    return HttpResponse("OK")
