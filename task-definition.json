@@ -18,6 +18,18 @@
           "protocol": "tcp"
         }
       ],
+      "environment": [
+        { "name": "SECRET_KEY", "value": "__SECRET_KEY__" },
+        { "name": "DEBUG", "value": "__DEBUG__" },
+        { "name": "ALLOWED_HOSTS", "value": "__ALLOWED_HOSTS__" },
+        { "name": "DB_NAME", "value": "__DB_NAME__" },
+        { "name": "DB_USER", "value": "__DB_USER__" },
+        { "name": "DB_PASSWORD", "value": "__DB_PASSWORD__" },
+        { "name": "DB_HOST", "value": "__DB_HOST__" },
+        { "name": "DB_PORT", "value": "__DB_PORT__" },
+        { "name": "TMDB_BEARER_TOKEN", "value": "__TMDB_TOKEN__" },
+        { "name": "KOBIS_API_KEY", "value": "__KOBIS_KEY__" }
+        ],
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {

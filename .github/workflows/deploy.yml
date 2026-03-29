@@ -45,6 +45,21 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
+      - name: Replace environment variables
+        run: |
+          sed -i 's|__SECRET_KEY__|${{ secrets.SECRET_KEY }}|g' task-definition.json
+          sed -i 's|__DEBUG__|${{ secrets.DEBUG }}|g' task-definition.json
+          sed -i 's|__ALLOWED_HOSTS__|${{ secrets.ALLOWED_HOSTS }}|g' task-definition.json
+
+          sed -i 's|__DB_NAME__|${{ secrets.DB_NAME }}|g' task-definition.json
+          sed -i 's|__DB_USER__|${{ secrets.DB_USER }}|g' task-definition.json
+          sed -i 's|__DB_PASSWORD__|${{ secrets.DB_PASSWORD }}|g' task-definition.json
+          sed -i 's|__DB_HOST__|${{ secrets.DB_HOST }}|g' task-definition.json
+          sed -i 's|__DB_PORT__|${{ secrets.DB_PORT }}|g' task-definition.json
+
+          sed -i 's|__TMDB_TOKEN__|${{ secrets.TMDB_TOKEN }}|g' task-definition.json
+          sed -i 's|__KOBIS_KEY__|${{ secrets.KOBIS_KEY }}|g' task-definition.json
+
       - name: Render ECS task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
