@@ -57,8 +57,8 @@ jobs:
           sed -i 's|__DB_HOST__|${{ secrets.DB_HOST }}|g' task-definition.json
           sed -i 's|__DB_PORT__|${{ secrets.DB_PORT }}|g' task-definition.json
 
-          sed -i 's|__TMDB_TOKEN__|${{ secrets.TMDB_TOKEN }}|g' task-definition.json
-          sed -i 's|__KOBIS_KEY__|${{ secrets.KOBIS_KEY }}|g' task-definition.json
+          sed -i 's|__TMDB_BEARER_TOKEN__|${{ secrets.TMDB_BEARER_TOKEN }}|g' task-definition.json
+          sed -i 's|__KOBIS_API_KEY__|${{ secrets.KOBIS_API_KEY }}|g' task-definition.json
 
       - name: Render ECS task definition
         id: task-def
