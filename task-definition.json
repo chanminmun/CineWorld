@@ -1,0 +1,30 @@
+{
+  "family": "cineworld-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::808243603066:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "cineworld-container",
+      "image": "808243603066.dkr.ecr.ap-northeast-2.amazonaws.com/cineworld:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "hostPort": 8000,
+          "protocol": "tcp"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/cineworld",
+          "awslogs-region": "ap-northeast-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
